@@ -6,7 +6,10 @@ const Dashboard = (props) => {
   return (
     <>
   <Main_pan active={props.active} setActive={props.setActive}>
-
+<div className="dash ">
+    
+    
+</div>
   </Main_pan>
     </>
   )

@@ -4,7 +4,7 @@ import Sidebar from '../header/sidebar/Sidebar'
 const Main_pan = ({children, active, setActive }) => {
   return (
     <>
-      <div className="main-pan-parent parent">
+      <div className="main-pan-parent">
         <div className={ active ? "sidebar active" : "sidebar"}>
 
             <Sidebar setActive={setActive}  />

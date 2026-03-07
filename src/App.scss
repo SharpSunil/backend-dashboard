@@ -144,19 +144,19 @@ P {
   letter-spacing: 0.5px;
 }
 
-.parent {
-  width: 100vw;
-  height: auto;
+// .parent {
+//   width: 100vw;
+//   height: auto;
 
-  .container {
-    height: 100%;
-    max-width: var(--max-width);
+//   .container {
+//     height: 100%;
+//     max-width: var(--max-width);
 
-    margin: auto;
-    padding: 0px 10px;
-    // overflow-x: hidden!important;
-  }
-}
+//     margin: auto;
+//     padding: 0px 10px;
+//     // overflow-x: hidden!important;
+//   }
+// }
 .btn {
   padding: 10px 20px;
   font-size: 16px;
