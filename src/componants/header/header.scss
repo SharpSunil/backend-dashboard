@@ -1,0 +1,44 @@
+.header-parent{
+    .header-cont{
+        padding:20px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .group1{
+            .logo{
+                font-size: 24px;
+                font-weight: 600;
+            }
+        }
+
+        .group2{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .search-input{
+                padding: 8px 12px;
+                border-radius: 5px;
+                border: 1px solid var(--accent);
+                // outline: none;
+            }
+        }
+
+        .group3{
+            display: flex;
+            gap:10px;
+            .tab{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                padding: 5px 10px;
+                border-radius: 5px;
+                
+                span{
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+    }
+}
