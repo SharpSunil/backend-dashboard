@@ -2,18 +2,22 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.scss'
-import Header from './componants/header/Header'
+import Sidebar from './componants/header/sidebar/Sidebar'
+import Dashboard from './Pages/dashboard/Dashboard'
+import { useState } from 'react'
+// import Header from './componants/header/Header'
 
 
 function App() {
-
+const [active, setActive] = useState(false);
 
   return (
     <>
       <BrowserRouter>
-        <Header />
+        {/* <Header /> */}
+        
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Dashboard  active={active} setActive={setActive}/>} />
         </Routes>
       </BrowserRouter>
     </>
