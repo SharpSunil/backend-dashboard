@@ -1,126 +1,84 @@
 .header-parent {
-  .header-cont {
-    padding: 10px 10px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.311);
+  padding: 5px 10px;
+
+  .icon {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    .group1 {
-      .logo {
-        font-size: 24px;
-        font-weight: 600;
+    font-size: 22px;
+    transition: var(--trans2);
+    padding: 5px;
+    border-radius: 5px;
+    &:hover {
+      background: violet;
+      color: var(--white);
+    }
+  }
+  .right-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(238, 130, 238, 0.177);
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: var(--trans);
+    position: relative;
+    &:hover {
+      background: violet;
+    }
+    .profile-pic {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        // object-fit: cover;
       }
     }
-
-    .group2 {
+    .open-box {
+      position: absolute;
+      top: 40px;
+      right: 0px;
+      background: white;
+      border-radius: 5px;
+      box-shadow: var(--shadow);
+      padding: 10px;
       display: flex;
-      align-items: center;
-      gap: 20px;
-      position: relative;
-      .search-input {
-        padding: 8px 12px;
-        border-radius: 5px;
-        border: 1px solid var(--accent);
-        // outline: none;
-      }
-      .search-btn {
-        cursor: pointer;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 16px;
-        position: absolute;
-        right: 2px;
-        font-size: 20px;
-      }
-    }
-
-    .group3 {
-      display: flex;
+      flex-direction: column;
       gap: 10px;
-      .tab {
+      width: 150px;
+      z-index: 100;
+      .box-item {
         display: flex;
         align-items: center;
-        gap: 5px;
-        padding: 5px 10px;
-        border-radius: 50px;
-        transition: var(--trans);
-        cursor: pointer;
-        .icon {
-          display: flex;
-          align-items: center;
-        }
-        span {
-          font-size: 10px;
-          font-weight: 500;
-        }
-        &:hover {
-          background-color: black;
-          color: var(--white);
-        }
-      }
-    }
-
-    .group4 {
-      display: flex;
-      gap: 8px;
-      .message,
-      .notification {
-        display: flex;
-        align-items: center;
-        .icon {
-          display: flex;
-          align-items: center;
-          font-size: 20px;
-          position: relative;
-          cursor: pointer;
-          span {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background-color: red;
-            color: var(--white);
-            font-size: 10px;
-            width: 16px;
-            height: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-          }
-        }
-      }
-
-      .profile {
-        display: flex;
-        align-items: center;
-        background: black;
-        padding: 5px 10px;
-        gap: 5px;
-        border-radius: 50px;
-        .user-image {
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          overflow: hidden;
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-        }
-        .username {
-          font-size: 14px;
-          font-weight: 500;
-          color: var(--white);
-        }
-        .icon {
-          display: flex;
-          align-items: center;
+        .icon-m,
+        .icon-l {
           font-size: 16px;
-          color: var(--white);
-          cursor: pointer;
+          width: 120px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          border-radius: 5px;
+          padding: 5px;
+          transition: var(--trans);
+          span {
+            font-size: 14px;
+          }
+          &:hover {
+            background: violet;
+            color: var(--white);
+          }
+        }
+
+        .icon-l {
+          color: red;
         }
       }
     }

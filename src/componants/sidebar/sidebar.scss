@@ -46,7 +46,9 @@
         color: var(--white);
         cursor: pointer;
         transition: var(--trans);
-
+a{
+  color:var(--white);
+}
         .icon {
           display: flex;
           align-items: center;

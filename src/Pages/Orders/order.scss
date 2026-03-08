@@ -1,0 +1,61 @@
+.order-details {
+  background: rgba(128, 128, 128, 0.07);
+  padding: 20px;
+  height: 100%;
+  border-radius: 0px 10px 0px 10px;
+  .order-id{
+    font-size: 20px;
+    padding:20px;
+    span{
+        font-size: 16px;
+        color:var(--accent);
+    }
+  }
+
+//   {/* Order information --- data for order */}
+ .ord-information{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    p{
+        display: flex;
+       font-size: 16px;
+        b{
+            
+            width:100px;
+            display: inline-block;
+        }
+    }
+ }
+
+ //   {/* Payment information --- data for Payment */}
+ .pay-information{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    p{
+        display: flex;
+       font-size: 16px;
+        b{
+            
+            width:160px;
+            display: inline-block;
+        }
+    }
+ }
+
+ //   {/* Order Status --- data for order Status */}
+ .ord-status{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    p{
+        display: flex;
+        width:50%;
+        
+       font-size: 16px;
+     
+       
+    }
+ }
+}

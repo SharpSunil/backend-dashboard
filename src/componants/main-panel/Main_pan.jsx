@@ -1,16 +1,16 @@
 import React from 'react'
 import "./main_panel.scss"
-import Sidebar from '../header/sidebar/Sidebar'
-const Main_pan = ({children, active, setActive }) => {
+import Sidebar from '../sidebar/Sidebar'
+const Main_pan = ({ children, active, setActive }) => {
   return (
     <>
       <div className="main-pan-parent">
-        <div className={ active ? "sidebar active" : "sidebar"}>
+        <div className={active ? "sidebar active" : "sidebar"}>
 
-            <Sidebar setActive={setActive}  />
+          <Sidebar setActive={setActive} />
         </div>
         <div className={active ? "main-right active" : "main-right"}>
-            {children}
+          {children}
         </div>
       </div>
     </>

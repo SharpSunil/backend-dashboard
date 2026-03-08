@@ -3,6 +3,7 @@ import "./sidebar.scss"
 import { SiWelcometothejungle } from "react-icons/si";
 import { MdOutlineDashboard } from "react-icons/md";
 import { MdProductionQuantityLimits } from "react-icons/md";
+import { Link } from 'react-router-dom';
 const Sidebar = (props) => {
     return (
         <>
@@ -19,12 +20,12 @@ const Sidebar = (props) => {
                     < p className='menu'>MENU ITMES</p>
                     <div className="menu-list">
                         <div className="item1">
-                            <div className="icon"><MdOutlineDashboard /><span>Dashboard</span></div>
+                            <Link to="/" className="icon"><MdOutlineDashboard /><span>Dashboard</span></Link>
 
                         </div>
 
                         <div className="item2">
-                            <div className="icon"><MdProductionQuantityLimits /><span>Products</span></div>
+                            <Link to="/product" className="icon"><MdProductionQuantityLimits /><span>Products</span></Link>
 
                         </div>
                     </div>
