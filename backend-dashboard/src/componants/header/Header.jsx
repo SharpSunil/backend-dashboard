@@ -5,33 +5,52 @@ import "./header.scss"
 import { IoSettingsOutline } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
 import { IoLogOutOutline } from "react-icons/io5";
-const Header = () => {
+
+const Header = ({ toggleSidebar }) => {
+
     const [open, setOpen] = useState(false);
+
     return (
-        <>
-            <div className="header-parent">
-                <div className="icon">
-                    <TbLayoutSidebarRight />
-                </div>
-                <div className="right-profile" onClick={() => setOpen(!open)}>
-                    <div className="profile-pic"><img src={img1} alt="Profile" /></div>
-                    <div className="username">Admin</div>
+        <div className="header-parent">
 
-                    {open && <div className="open-box">
-                        <div className="box-item">
-                            <div className="icon-m"><FaRegUser /><span>Profile</span></div>
-                        </div>
-                        <div className="box-item">
-                            <div className="icon-m"><IoSettingsOutline /><span>Settings</span></div>
-                        </div>
-                        <div className="box-item">
-                            <div className="icon-l"><IoLogOutOutline /><span>Logout</span></div>
-                        </div>
-                    </div>}
-                </div>
+            <div className="icon" onClick={toggleSidebar}>
+                <TbLayoutSidebarRight />
             </div>
-        </>
-    )
-}
 
-export default Header
+            <div className="right-profile" onClick={() => setOpen(!open)}>
+                <div className="profile-pic">
+                    <img src={img1} alt="Profile" />
+                </div>
+
+                <div className="username">Admin</div>
+
+                {open && (
+                    <div className="open-box">
+                        <div className="box-item">
+                            <div className="icon-m">
+                                <FaRegUser />
+                                <span>Profile</span>
+                            </div>
+                        </div>
+
+                        <div className="box-item">
+                            <div className="icon-m">
+                                <IoSettingsOutline />
+                                <span>Settings</span>
+                            </div>
+                        </div>
+
+                        <div className="box-item">
+                            <div className="icon-l">
+                                <IoLogOutOutline />
+                                <span>Logout</span>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+};
+
+export default Header;

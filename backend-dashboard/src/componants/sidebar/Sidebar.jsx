@@ -4,35 +4,41 @@ import { SiWelcometothejungle } from "react-icons/si";
 import { MdOutlineDashboard } from "react-icons/md";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { Link } from 'react-router-dom';
-const Sidebar = (props) => {
+
+const Sidebar = ({ sidebarOpen }) => {
     return (
-        <>
-            <div className="sidebar-parent ">
-                {/* Admin and logo */}
-                <div className="logo-icon-group">
-                    <div className="icon-logo">
-                        <SiWelcometothejungle />
-                        <span>Admin Login</span>
-                    </div>
-                </div>
-                {/* sidebar menu items */}
-                <div className="menu-group">
-                    < p className='menu'>MENU ITMES</p>
-                    <div className="menu-list">
-                        <div className="item1">
-                            <Link to="/" className="icon"><MdOutlineDashboard /><span>Dashboard</span></Link>
+        <div className={`sidebar-parent ${sidebarOpen ? "open" : "close"}`}>
 
-                        </div>
-
-                        <div className="item2">
-                            <Link to="/product" className="icon"><MdProductionQuantityLimits /><span>Products</span></Link>
-
-                        </div>
-                    </div>
+            <div className="logo-icon-group">
+                <div className="icon-logo">
+                    <SiWelcometothejungle />
+                    <span>Admin Login</span>
                 </div>
             </div>
 
-        </>
+            <div className="menu-group">
+                <p className='menu'>MENU ITEMS</p>
+
+                <div className="menu-list">
+
+                    <div className="item1">
+                        <Link to="/" className="icon">
+                            <MdOutlineDashboard />
+                            <span>Dashboard</span>
+                        </Link>
+                    </div>
+
+                    <div className="item2">
+                        <Link to="/product" className="icon">
+                            <MdProductionQuantityLimits />
+                            <span>Products</span>
+                        </Link>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     )
 }
 
