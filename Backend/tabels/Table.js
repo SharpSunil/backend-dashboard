@@ -57,6 +57,17 @@ timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )
 `;
 
+
+/* ================= ORDER NOTES TABLE ================= */
+
+const orderNotesTable = `
+CREATE TABLE IF NOT EXISTS order_notes (
+id INT AUTO_INCREMENT PRIMARY KEY,
+orderId VARCHAR(255) NOT NULL,
+note TEXT NOT NULL,
+createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+`;
 /* ================= GENERIC TABLE CREATOR ================= */
 
 const createTable = async (query, tableName) => {
@@ -122,6 +133,7 @@ export const createAllTables = async () => {
     await createTable(paymentsTable, "payments");
 
     await createTable(auditTable, "audit_logs");
+    await createTable(orderNotesTable, "order_notes");
 
     await createDefaultAdmin();
 

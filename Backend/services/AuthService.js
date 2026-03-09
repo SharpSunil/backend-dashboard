@@ -42,3 +42,35 @@ export const loginService = async (email, password) => {
   }
 
 };
+
+
+/* -------- REFRESH TOKEN SERVICE -------- */
+
+export const refreshTokenService = async (token) => {
+
+  try {
+
+    if (!token) {
+      throw new Error("Token required");
+    }
+
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    const newToken = jwt.sign(
+      {
+        id: decoded.id,
+        role: decoded.role
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
+
+    return {
+      token: newToken
+    };
+
+  } catch (error) {
+    throw new Error("Invalid token");
+  }
+
+};
