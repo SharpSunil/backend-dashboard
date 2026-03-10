@@ -9,7 +9,7 @@ import { CiEdit } from "react-icons/ci";
 import OrderStatusGraph from '../../componants/graphcode/OrderStatusGraph';
 import PaymentStatusGraph from '../../componants/graphcode/PaymentStatusGraph';
 import Product from '../product/Product';
-import Main_pan from '../../componants/main-panel/main_pan';
+import Main_pan from '../../componants/main-panel/Main_pan';
 
 const Dashboard = (props) => {
   return (
