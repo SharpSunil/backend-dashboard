@@ -1,7 +1,7 @@
 import React from 'react'
 import "./main_panel.scss"
 import Sidebar from '../sidebar/Sidebar'
-const Main_pan = ({ children, active, setActive }) => {
+const Mainpan = ({ children, active, setActive }) => {
   return (
     <>
       <div className="main-pan-parent">
@@ -17,4 +17,4 @@ const Main_pan = ({ children, active, setActive }) => {
   )
 }
 
-export default Main_pan
+export default Mainpan

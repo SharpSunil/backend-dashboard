@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, Table, Tag, Select, Input, Button, Timeline, message } from "antd";
-import Main_pan from "../../componants/main-panel/main_pan";
+import Main_pan from "../../componants/main-panel/Mainpan";
 import Header from "../../componants/header/Header";
 import "./order.scss";
 import axios from "axios";
