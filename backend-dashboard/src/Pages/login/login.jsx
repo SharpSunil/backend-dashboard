@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./login.scss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -15,6 +16,7 @@ const Login = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     setForm({
@@ -80,14 +82,25 @@ const Login = () => {
           required
         />
 
-        <input
-          type="password"
-          name="password"
-          placeholder="Enter Password"
-          value={form.password}
-          onChange={handleChange}
-          required
-        />
+        <div className="password-field">
+
+          <input
+            type={showPassword ? "text" : "password"}
+            name="password"
+            placeholder="Enter Password"
+            value={form.password}
+            onChange={handleChange}
+            required
+          />
+
+          <span
+            className="eye-icon"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? <FaEye />  : <FaEyeSlash />}
+          </span>
+
+        </div>
 
         <button className="btn" type="submit" disabled={loading}>
           {loading ? "Logging in..." : "Login"}
@@ -101,4 +114,4 @@ const Login = () => {
 
 };
 
-export default Login; 
+export default Login;

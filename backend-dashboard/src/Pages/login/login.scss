@@ -20,6 +20,22 @@
       font-weight: 600;
       color: var(--accent);
     }
+    .password-field {
+  position: relative;
+}
+
+.password-field input {
+  width: 100%;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+}
     input {
       padding: 10px;
       border: 1px solid #ddd;
@@ -33,6 +49,7 @@
       color:white;
       padding:10px;
       border-radius:5px;
+      width:100%;
       cursor:pointer;
     }
   }
