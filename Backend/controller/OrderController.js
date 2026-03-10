@@ -1,3 +1,4 @@
+import { database } from "../db/Database.js";
 import {
   getOrdersService,
   getOrderByIdService,
@@ -42,9 +43,38 @@ export const getOrderByIdController = async (req, res) => {
 
     const order = await getOrderByIdService(id);
 
+    const orderdata = order
+
+    
+   
+
+    const mappedData = orderdata?.items?.map((item)=>({
+      name:item?.name,
+      price:item?.price,
+      quantity : item?.qty,
+      total : item?.price * item?.qty
+    }));
+
+
+
+    const filertaedata = {
+      amount : orderdata?.amount,
+      createdAt : orderdata?.createdAt,
+      currency: orderdata?.currency,
+      customer : orderdata?.customer,
+      id:orderdata?.id,
+      items:mappedData,
+      orderId:orderdata?.orderId,
+      paymentMethod:orderdata?.paymentMethod,
+      orderStatus:orderdata?.orderStatus,
+      paymentStatus:orderdata?.paymentStatus
+    }
+
+    
+
     res.status(200).json({
       success: true,
-      data: order
+      data: filertaedata
     });
 
   } catch (error) {

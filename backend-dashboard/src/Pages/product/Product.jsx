@@ -7,6 +7,7 @@ import dayjs from "dayjs";
 import isBetween from "dayjs/plugin/isBetween";
 import "antd/dist/reset.css";
 import "./product.scss";
+import { EditOutlined, EyeOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
 dayjs.extend(isBetween);
@@ -85,13 +86,13 @@ const Product = (props) => {
         dayjs(record.createdAt).format("DD MMM YYYY"),
     },
     {
-      title: "Action",
-      render: (_, record) => (
-        <Link to={`/product/${record.orderId}`}>
-          View
-        </Link>
-      ),
-    },
+  title: "Action",
+  render: (_, record) => (
+    <Link to={`/product/${record.id}`}>
+      <EditOutlined style={{ fontSize: "18px", color: "#05233e" }} />
+    </Link>
+  ),
+}
   ];
 
   // API CALL
@@ -150,64 +151,65 @@ const Product = (props) => {
 
   return (
     <>
-      <Main_pan active={props.active} setActive={props.setActive}>
-        <Header />
+      {/* <Main_pan active={props.active} setActive={props.setActive}>
+        <Header /> */}
 
-        <div className="product">
+      <div className="product">
 
-          <h1 className="main-heading">Orders</h1>
-          <p className="desc">{filteredData.length} Orders Found</p>
+        <h1 className="main-heading">Orders</h1>
+        <p className="desc">{filteredData.length} Orders Found</p>
 
-          <div className="main-product-box">
+        <div className="main-product-box">
 
-            <div className="top-box">
+          <div className="top-box">
 
-              <Search
-                placeholder="Search order ID or email..."
-                allowClear
-                enterButton
-                style={{ width: 250 }}
-                onSearch={(value) => setSearchText(value)}
-              />
+            <Search
+              placeholder="Search order ID or email..."
+              allowClear
+              enterButton
+              style={{ width: 250 }}
+              onSearch={(value) => setSearchText(value)}
+            />
 
-              <Select
-                defaultValue="all"
-                style={{ width: 180 }}
-                options={paymentOptions}
-                onChange={(value) => setPaymentFilter(value)}
-              />
+            <Select
+              defaultValue="all"
+              style={{ width: 180 }}
+              options={paymentOptions}
+              onChange={(value) => setPaymentFilter(value)}
+            />
 
-              <Select
-                defaultValue="all"
-                style={{ width: 180 }}
-                options={statusOptions}
-                onChange={(value) => setStatusFilter(value)}
-              />
+            <Select
+              defaultValue="all"
+              style={{ width: 180 }}
+              options={statusOptions}
+              onChange={(value) => setStatusFilter(value)}
+            />
 
-              <RangePicker
-                style={{ width: 260 }}
-                onChange={(dates) => setDateRange(dates)}
-              />
+            <RangePicker
+              style={{ width: 260 }}
+              onChange={(dates) => setDateRange(dates)}
+            />
 
-            </div>
+          </div>
 
-            <div className="bottom-box">
+          <div className="bottom-box">
 
-              <Table
-                columns={columns}
-                dataSource={filteredData}
-                rowKey="id"
-                loading={loading}
-                pagination={{ pageSize: 5 }}
-              />
-
-            </div>
+            <Table
+              columns={columns}
+              dataSource={filteredData}
+              rowKey="id"
+              loading={loading}
+              pagination={{ pageSize: 8}}
+              scroll={{ x: 900 }}
+            />
 
           </div>
 
         </div>
 
-      </Main_pan>
+      </div>
+
+      {/* </Main_pan> */}
     </>
   );
 };

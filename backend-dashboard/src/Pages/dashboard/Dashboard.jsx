@@ -5,7 +5,10 @@ import Header from '../../componants/header/Header'
 import { LuShoppingCart } from "react-icons/lu";
 import { CiUser } from "react-icons/ci";
 import { MdCurrencyRupee } from "react-icons/md";
-import { CiEdit } from "react-icons/ci"; 
+import { CiEdit } from "react-icons/ci";
+import OrderStatusGraph from '../../componants/graphcode/OrderStatusGraph';
+import PaymentStatusGraph from '../../componants/graphcode/PaymentStatusGraph';
+import Product from '../product/Product';
 
 const Dashboard = (props) => {
   return (
@@ -51,6 +54,25 @@ const Dashboard = (props) => {
               <div className="dash-icon"><CiEdit /></div>
             </div>
           </div>
+          <div className="second-box">
+            <div className="order-table">
+<Product />
+              </div>
+              <div className="main_graph">
+                <div className="graph-box-order-status">
+
+                  <OrderStatusGraph />
+
+                </div>
+                <div className="graph-box-payment-status">
+                  <PaymentStatusGraph />
+                </div>
+              </div>
+            
+          </div>
+
+
+
 
         </div>
       </Main_pan>

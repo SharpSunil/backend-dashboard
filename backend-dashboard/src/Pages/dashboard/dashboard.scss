@@ -1,8 +1,8 @@
 .dash {
-  background: rgba(128, 128, 128, 0.07);
+  // background: rgba(128, 128, 128, 0.07);
   padding: 20px;
-  height: 100%;
-  border-radius: 0px 10px 0px 10px;
+  height: 100vh;
+  // border-radius: 0px 10px 0px 10px;
 
   .main-heading {
     font-size: 22px;
@@ -13,6 +13,7 @@
   .main-box {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 20px;
     padding-top: 20px;
     .box {
@@ -22,35 +23,91 @@
       border: 1px solid rgba(0, 0, 0, 0.092);
       border-radius: 10px;
       box-shadow: var(--shadow);
-        position: relative;
+      position: relative;
     }
     @media only screen and (max-width: 1260px) {
       .box {
         width: 300px;
       }
     }
-    .text{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-      
-        .sub-title{
-            font-size:14px;
-            font-weight:500;
-        }
-        .titles{
-            font-size:20px;
-        }
-        .sub-desc{
-            color:green;
-            font-size: 10px;
-        }
+    .text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      .sub-title {
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .titles {
+        font-size: 20px;
+      }
+      .sub-desc {
+        color: green;
+        font-size: 10px;
+      }
     }
-    .dash-icon{
-        position:absolute;
-        top:20px;
-        right:20px;
+    .dash-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: var(--shadow);
+      display: flex;
     }
   }
+.second-box{
+  display: flex;
+  padding-top:20px;
+  border-radius:10px;
+  gap:20px;
+    
+  .order-table{
+    width:70%;
+    border-radius:10px;
+    box-shadow:var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.092);
+    
+   
+  }
+  .main_graph {
+   
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    gap: var(--gap);
+    
+
+    .graph-box-order-status {
+      width: 100%;
+      background-color: white;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0, 0, 0, 0.092);
+    }
+
+    .graph-box-payment-status {
+      width: 100%;
+      background-color: white;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+  }
+  @media only screen and (max-width: 1200px) {
+    .main_graph {
+      flex-direction: column;
+      .graph-box-order-status,
+      .graph-box-payment-status {
+        width: 100%;
+      }
+    }
+  }
+}
+
 }

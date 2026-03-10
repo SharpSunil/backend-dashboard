@@ -38,6 +38,7 @@ export const getOrderById = async (id) => {
       currency,
       orderStatus,
       paymentStatus,
+      paymentMethod,
       items,
       createdAt
     FROM orders
@@ -64,6 +65,12 @@ export const updateOrderStatus = async (orderId, status) => {
     [status, orderId]
   );
 
+
+  await database.query(`INSERT INTO audit_logs ( action, entityType, entityId, meta) 
+    VALUES (?,?,?,?)`,
+    ['UPDATE', 'orderstatus', orderId, null])
+
+
   return result;
 
 };
@@ -81,6 +88,10 @@ export const updatePaymentStatus = async (orderId, paymentStatus) => {
     `,
     [paymentStatus, orderId]
   );
+
+  await database.query(`INSERT INTO audit_logs ( action, entityType, entityId, meta) 
+    VALUES (?,?,?,?)`,
+    ['UPDATE', 'paymentStatus', orderId, null])
 
   return result;
 

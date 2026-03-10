@@ -1,8 +1,9 @@
 .product {
-  background: rgba(128, 128, 128, 0.07);
+  // background: rgba(128, 128, 128, 0.07);
+  background:var(--white);
   padding: 20px;
   height: 100%;
-  border-radius: 0px 10px 0px 10px;
+  border-radius: 10px 10px 10px 10px;
    .main-heading {
     font-size: 22px;
   }

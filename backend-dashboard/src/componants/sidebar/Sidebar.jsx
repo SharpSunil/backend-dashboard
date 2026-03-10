@@ -28,12 +28,12 @@ const Sidebar = ({ sidebarOpen }) => {
                         </Link>
                     </div>
 
-                    <div className="item2">
+                    {/* <div className="item2">
                         <Link to="/product" className="icon">
                             <MdProductionQuantityLimits />
                             <span>Products</span>
                         </Link>
-                    </div>
+                    </div> */}
 
                 </div>
             </div>

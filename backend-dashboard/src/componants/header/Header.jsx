@@ -10,6 +10,12 @@ const Header = ({ toggleSidebar }) => {
 
     const [open, setOpen] = useState(false);
 
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        window.location.href = "/login";
+    };
+
     return (
         <div className="header-parent">
 
@@ -40,7 +46,7 @@ const Header = ({ toggleSidebar }) => {
                             </div>
                         </div>
 
-                        <div className="box-item">
+                        <div className="box-item" onClick={handleLogout}>
                             <div className="icon-l">
                                 <IoLogOutOutline />
                                 <span>Logout</span>

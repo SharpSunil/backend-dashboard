@@ -23,8 +23,9 @@ orderId VARCHAR(255) NOT NULL,
 customer JSON NOT NULL,
 amount DECIMAL(10,2) NOT NULL,
 currency VARCHAR(10) DEFAULT 'INR',
-orderStatus ENUM('pending','confirmed','cancelled','delivered') DEFAULT 'pending',
-paymentStatus ENUM('pending','captured','paid','failed') DEFAULT 'pending',
+orderStatus ENUM('pending','confirmed','cancelled','delivered','shipped') DEFAULT 'pending',
+paymentMethod ENUM('UPI', 'Razorpay', 'Net banking', 'Cash'),
+paymentStatus ENUM('pending','captured','paid','failed','refunded') DEFAULT 'pending',
 items JSON NOT NULL,
 createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )

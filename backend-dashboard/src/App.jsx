@@ -27,14 +27,14 @@ function App() {
           }
         />
 
-        <Route
+        {/* <Route
           path="/product"
           element={
             <ProtectedRoute>
               <Product active={active} setActive={setActive} />
             </ProtectedRoute>
           }
-        />
+        /> */}
 
         <Route
           path="/product/:id"

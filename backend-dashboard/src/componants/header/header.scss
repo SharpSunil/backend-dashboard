@@ -15,7 +15,7 @@
     padding: 5px;
     border-radius: 5px;
     &:hover {
-      background: violet;
+      background: var(--accent);
       color: var(--white);
     }
   }
@@ -23,13 +23,14 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    background: rgba(238, 130, 238, 0.177);
+    background: rgba(0, 1, 21, 0.064);
     border-radius: 5px;
     padding: 5px 10px;
     transition: var(--trans);
     position: relative;
     &:hover {
-      background: violet;
+      background: var(--accent);
+      color:white;
     }
     .profile-pic {
       width: 30px;
@@ -68,11 +69,12 @@
           border-radius: 5px;
           padding: 5px;
           transition: var(--trans);
+          color:var(--accent);
           span {
             font-size: 14px;
           }
           &:hover {
-            background: violet;
+            background: var(--accent);
             color: var(--white);
           }
         }
