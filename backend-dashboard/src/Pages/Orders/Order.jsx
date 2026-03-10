@@ -3,10 +3,15 @@ import { Card, Table, Tag, Select, Input, Button, Timeline } from "antd";
 import Main_pan from "../../componants/main-panel/main_pan";
 import Header from "../../componants/header/Header";
 import "./order.scss"
+import { useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 const { TextArea } = Input;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Order = (props) => {
-
+const [order, setOrder] = useState();
+const { id } = useParams();
     const [orderStatus, setOrderStatus] = useState("Processing");
     const [paymentStatus, setPaymentStatus] = useState("Paid");
     const [note, setNote] = useState("");
@@ -46,6 +51,21 @@ const Order = (props) => {
             total: "₹500",
         },
     ];
+
+    //api call
+    useEffect(() =>{
+        const getorder = async() =>{
+            try {
+                const res = await axios.get(`${API_BASE_URL}/admin/orders/${id}`);
+                console.log(res.data.data, "product data with id wise ;jkdfsjkdsfjklsdfjkljklsdff");
+                
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getorder();
+
+    }, [id]);
 
     return (
         <Main_pan active={props.active} setActive={props.setActive}>
