@@ -1,4 +1,4 @@
-import express from "express";
+import express, { response } from "express";
 import cors from "cors";
 import http from "http";
 import dotenv from "dotenv";
@@ -15,6 +15,10 @@ app.use(express.json());
 app.use(cors());
 
 const port = process.env.PORT
+
+app.use("/",(req, res)=>{
+    res.send("Hello users ")
+})
 
 try {
     const server = http.createServer(app);
