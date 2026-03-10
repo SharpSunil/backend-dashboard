@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Main_pan from "../../componants/main-panel/main_pan";
-import Header from "../../componants/header/Header";
+
 import { Select, DatePicker, Table, Tag, Input } from "antd";
 import axios from "axios";
 import dayjs from "dayjs";
