@@ -1,6 +1,6 @@
 import React from 'react'
 import "./dashboard.scss"
-import Main_pan from '../../componants/main-panel/main_pan'
+
 import Header from '../../componants/header/Header'
 import { LuShoppingCart } from "react-icons/lu";
 import { CiUser } from "react-icons/ci";
@@ -9,6 +9,7 @@ import { CiEdit } from "react-icons/ci";
 import OrderStatusGraph from '../../componants/graphcode/OrderStatusGraph';
 import PaymentStatusGraph from '../../componants/graphcode/PaymentStatusGraph';
 import Product from '../product/Product';
+import Main_pan from '../../componants/main-panel/main_pan';
 
 const Dashboard = (props) => {
   return (
@@ -56,19 +57,19 @@ const Dashboard = (props) => {
           </div>
           <div className="second-box">
             <div className="order-table">
-<Product />
-              </div>
-              <div className="main_graph">
-                <div className="graph-box-order-status">
+              <Product />
+            </div>
+            <div className="main_graph">
+              <div className="graph-box-order-status">
 
-                  <OrderStatusGraph />
+                <OrderStatusGraph />
 
-                </div>
-                <div className="graph-box-payment-status">
-                  <PaymentStatusGraph />
-                </div>
               </div>
-            
+              <div className="graph-box-payment-status">
+                <PaymentStatusGraph />
+              </div>
+            </div>
+
           </div>
 
 
